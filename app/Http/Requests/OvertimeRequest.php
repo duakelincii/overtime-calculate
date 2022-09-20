@@ -26,10 +26,7 @@ class OvertimeRequest extends FormRequest
     {
         return [
             'employee_id' => 'required|integer|exists:employees,id',
-            'date' => Rule::unique('overtimes')->where(function ($query) {
-                $query->where('employee_id', $this->employee_id);
-                $query->where('date', $this->date);
-            }) . 'required|date_format:Y-m-d',
+            'date' => 'required|date_format:Y-m-d|unique:overtimes,date,'.$this->employee_id.',date',
             'time_started' => 'required|date_format:H:i|before:time_ended',
             'time_ended' => 'required|date_format:H:i|after:time_started',
         ];

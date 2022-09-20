@@ -26,7 +26,7 @@ class OvertimeController extends Controller
      *       name="date",
      *      in="query",
      *     required=true,
-     *   example="2020-01-01",
+     *   example="2022-09-09",
      * description="Isi dengan tanggal lembur format YYYY-MM-DD",
      * ),
      * @OA\Parameter(
