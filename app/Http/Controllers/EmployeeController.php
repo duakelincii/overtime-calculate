@@ -48,12 +48,13 @@ class EmployeeController extends Controller
      */
     public function store(EmployeeRequest $request)
     {
-        Employee::create($request->all());
+        $data = Employee::create($request->all());
 
         return response()
             ->json([
                 'success' => true,
                 'message' => 'Data karyawan berhasil ditambahkan.',
+                'data' => $data,
             ]);
     }
 }

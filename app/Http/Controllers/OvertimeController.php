@@ -65,12 +65,13 @@ class OvertimeController extends Controller
      */
     public function store(OvertimeRequest $request)
     {
-        Overtime::create($request->all());
+        $overtime = Overtime::create($request->all());
 
         return response()
             ->json([
                 'success' => true,
                 'message' => 'Data overtime berhasil ditambahkan.',
+                'data' => $overtime,
             ]);
     }
 
