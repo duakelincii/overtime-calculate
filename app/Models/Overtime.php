@@ -10,6 +10,7 @@ class Overtime extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $table = 'overtimes';
     public $hidden = ['employee_id'];
 
     protected $fillable = [
